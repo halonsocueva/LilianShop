@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="Lili's Shop">
+  <BOModel>
+    <Class Name="DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyUser" Caption="Base User" />
+  </BOModel>
+  <NavigationItems>
+    <Items>
+      <Item Id="Combos" Index="0">
+        <Items>
+          <Item Id="Combo_ListView" Caption="Combos Pendientes" Index="0" />
+          <Item Id="CombosRecogidos_ListView" Caption="Combos Recogidos" ViewId="Combo_ListView_Recogidos" Index="1" IsNewNode="True" />
+          <Item Id="ProductoCombo_ListView" Removed="True" />
+          <Item Id="TipoDeProducto_ListView" ViewId="TipoDeProducto_ListView" ObjectKey="" IsNewNode="True" Removed="True" />
+        </Items>
+      </Item>
+      <Item Id="Importados" Index="1">
+        <Items>
+          <Item Id="Paquete_ListView" Index="0" />
+        </Items>
+      </Item>
+      <Item Id="Deudores" Index="6" />
+      <Item Id="Default" Index="10">
+        <Items>
+          <Item Id="CosmeticoDeuda_ListView" Removed="True" />
+          <Item Id="CosméticoPaquete_ListView" Removed="True" />
+          <Item Id="MiscelaneaDeuda_ListView" Removed="True" />
+          <Item Id="MiscelaneaPaquete_ListView" Removed="True" />
+          <Item Id="ProductoComboDeuda_ListView" Removed="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <Options>
+    <LayoutManagerOptions RequiredFieldMark="*" />
+  </Options>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="23.1.4.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <ListView Id="ApplicationUser_ListView" Caption="Users" />
+    <ListView Id="Combo_ListView" Filter="[Recogido] = False" />
+    <ListView Id="Combo_ListView_Recogidos" ClassName="LilianQuincalla.Module.BusinessObjects.Combo" Filter="[Recogido] = True" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="Oid" PropertyName="Oid" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="NumeroOrden" PropertyName="NumeroOrden" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="FechaDeCompra" PropertyName="FechaDeCompra" Index="1" IsNewNode="True" />
+        <ColumnInfo Id="CentroRecolector" PropertyName="CentroRecolector" Index="2" IsNewNode="True" />
+        <ColumnInfo Id="Recolector" PropertyName="Recolector" Index="3" IsNewNode="True" />
+        <ColumnInfo Id="PrecioCombo" PropertyName="PrecioCombo" Index="4" IsNewNode="True" />
+        <ColumnInfo Id="TotalVentaCombo" PropertyName="TotalVentaCombo" Index="5" IsNewNode="True" />
+        <ColumnInfo Id="GananciaCombo" PropertyName="GananciaCombo" Index="6" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <DetailView Id="CosmeticoDeuda_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="CosmeticoDeuda" RelativeSize="100">
+              <LayoutItem Id="Cosmeticos" RelativeSize="5.769230769230769" />
+              <LayoutItem Id="Cantidad" RelativeSize="4.166666666666667" />
+              <LayoutItem Id="DeudaCosmetico" RelativeSize="90.06410256410257" />
+              <LayoutItem Id="Deudor" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="CosméticoPaquete_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="CosméticoPaquete" RelativeSize="100" Direction="Vertical">
+              <LayoutGroup Id="CosméticoPaquete_col1" RelativeSize="100">
+                <LayoutItem Id="Cosmetico" RelativeSize="6.2717770034843205" />
+                <LayoutItem Id="Cantidad" RelativeSize="4.529616724738676" />
+                <LayoutItem Id="TotalGenerado" RelativeSize="4.529616724738676" />
+                <LayoutItem Id="GananciaProducto" ViewItem="GananciaProducto" Index="3" RelativeSize="84.66898954703832" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="CosméticoPaquete_col2" Caption="CosméticoPaquete_col2" RelativeSize="50" Removed="True">
+                <LayoutItem Id="GananciaProducto" RelativeSize="100" Removed="True" />
+                <LayoutItem Id="Paquete" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Cosméticos_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Cosméticos" RelativeSize="100">
+              <LayoutItem Id="Nombre" RelativeSize="5.769230769230769" />
+              <LayoutItem Id="PrecioDeCompra" RelativeSize="4.166666666666667" />
+              <LayoutItem Id="PrecioDeVenta" RelativeSize="4.166666666666667" />
+              <LayoutItem Id="Imagen" RelativeSize="85.8974358974359" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="76.35270541082164" Removed="True">
+            <LayoutGroup Id="CosmeticoDeuda" Removed="True" />
+            <LayoutGroup Id="CosmeticoPaquete" RelativeSize="100" Removed="True">
+              <LayoutItem Id="CosmeticoPaquete" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="MiscelaneaDeuda_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="MiscelaneaDeuda" RelativeSize="100">
+              <LayoutItem Id="Miscelaneas" RelativeSize="5.769230769230769" />
+              <LayoutItem Id="Cantidad" RelativeSize="4.166666666666667" />
+              <LayoutItem Id="DeudaCosmetico" RelativeSize="90.06410256410257" />
+              <LayoutItem Id="Deudor" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="MiscelaneaPaquete_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="MiscelaneaPaquete" RelativeSize="100" Direction="Vertical">
+              <LayoutGroup Id="MiscelaneaPaquete_col1" RelativeSize="100">
+                <LayoutItem Id="Miscelaneas" RelativeSize="7.50551876379691" />
+                <LayoutItem Id="Cantidad" RelativeSize="5.739514348785872" />
+                <LayoutItem Id="TotalGenerado" RelativeSize="5.739514348785872" />
+                <LayoutItem Id="GananciaProducto" ViewItem="GananciaProducto" Index="3" RelativeSize="81.01545253863135" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="MiscelaneaPaquete_col2" Caption="MiscelaneaPaquete_col2" RelativeSize="50" Removed="True">
+                <LayoutItem Id="GananciaProducto" RelativeSize="100" Removed="True" />
+                <LayoutItem Id="Paquete" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Miscelaneas_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Miscelaneas" RelativeSize="100">
+              <LayoutItem Id="Nombre" RelativeSize="6.813627254509018" />
+              <LayoutItem Id="PrecioDeCompra" RelativeSize="5.210420841683367" />
+              <LayoutItem Id="PrecioDeVenta" RelativeSize="5.210420841683367" />
+              <LayoutItem Id="Imagen" RelativeSize="82.76553106212425" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" Removed="True" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="ProductoCombo_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="ProductoCombo" RelativeSize="100" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

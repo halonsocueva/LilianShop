@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="ProductoCombo_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="ProductoCombo">
+              <LayoutGroup Id="ProductoCombo_col1" RelativeSize="50">
+                <LayoutItem Id="Producto" RelativeSize="4" />
+                <LayoutItem Id="Cantidad" Index="1" RelativeSize="96" />
+                <LayoutItem Id="Combo" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="ProductoCombo_col2" RelativeSize="50">
+                <LayoutItem Id="TotalGenerado" RelativeSize="4" />
+                <LayoutItem Id="GananciaProducto" RelativeSize="96" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

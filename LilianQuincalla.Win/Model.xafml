@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Logo="ExpressAppLogo">
+  <BOModel>
+    <Class Name="LilianQuincalla.Module.BusinessObjects.Combo">
+      <AppearanceRules>
+        <AppearanceRule Id="HideCentroRecolectorData" Criteria="[Domicilio] = True" Visibility="Hide" TargetItems="CentroRecolector;Recolector" IsNewNode="True" />
+      </AppearanceRules>
+    </Class>
+  </BOModel>
+  <NavigationItems NavigationStyle="Accordion" DefaultChildItemsDisplayStyle="List" />
+  <Options UIType="TabbedMDI" FormStyle="Ribbon" />
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="23.1.5.0" IsNewNode="True" />
+    <SchemaModule Name="SystemWindowsFormsModule" Version="23.1.5.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <ListView Id="Combo_ListView" IsFooterVisible="True">
+      <Columns>
+        <ColumnInfo Id="TotalVentaCombo">
+          <Summary>
+            <ColumnSummaryItem Id="SumVentaCombo" SummaryType="Sum" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+        <ColumnInfo Id="GananciaCombo">
+          <Summary>
+            <ColumnSummaryItem Id="SumGananciaCombo" SummaryType="Sum" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+      </Columns>
+    </ListView>
+    <ListView Id="Combo_ListView_Recogidos" IsFooterVisible="True">
+      <Columns>
+        <ColumnInfo Id="TotalVentaCombo">
+          <Summary>
+            <ColumnSummaryItem Id="SumVentaRecogidos" SummaryType="Sum" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+        <ColumnInfo Id="GananciaCombo">
+          <Summary>
+            <ColumnSummaryItem Id="SumGananciaRecogidos" SummaryType="Sum" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+      </Columns>
+    </ListView>
+  </Views>
+</Application>
